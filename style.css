@@ -1,21 +1,36 @@
-*{
+* {
     box-sizing: border-box;
 }
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #ff6b6b, #f7b731, #48c6ef, #6f86d6);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
 body {
     margin: 0;
     font-family: sans-serif;
 }
+
 main {
     max-width: 700px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 100px;
     gap: 20px;
 }
-main > div {
+
+main>div {
     width: 100%;
+    
 }
+
 .input-container input {
     border: none;
     outline: none;
@@ -24,16 +39,19 @@ main > div {
     font-size: inherit;
     color: inherit;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 .bill-input {
     color: #6f3cff;
     font-size: 20px;
     /* padding-bottom: 10px; */
 }
+
 .input-container {
     border: 1px solid black;
     padding-left: 10px;
@@ -44,6 +62,7 @@ input[type=number]::-webkit-outer-spin-button {
     overflow: hidden;
 
 }
+
 .bill-output {
     background-color: #34568b;
     color: white;
@@ -52,8 +71,9 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
+
 }
+
 .tip-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -61,6 +81,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: white;
     margin-bottom: 10px;
 }
+
 .tip {
     background-color: #9c60ff;
     border-radius: 5px;
@@ -68,20 +89,25 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 10px;
     cursor: pointer;
 }
+
 .tip-container.disabled {
     opacity: 0.6;
 }
+
 .tip-container.disabled .tip {
     cursor: not-allowed;
 }
+
 .tip.selected {
     outline: 4px solid rgba(255, 162, 0, 0.888);
 }
+
 p {
     /* margin-bottom: 8px; */
     font-size: 20px;
 
 }
+
 .gray-input {
     border: none;
     outline: none;
@@ -92,7 +118,8 @@ p {
     color: #6f3cff;
     font-size: 15px;
 }
-.generate-bill-btn{
+
+.generate-bill-btn {
     border: none;
     border-radius: 7px;
     background-color: #9c60ff;
@@ -104,6 +131,7 @@ p {
     margin-top: 16px;
     cursor: pointer;
 }
+
 .generate-bill-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
@@ -111,14 +139,16 @@ p {
 
 .bill-output p span {
     font-size: 25px;
-    color:  #c39ffc;
+    color: #c39ffc;
 }
+
 .bill-output p {
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .reset-btn {
     width: 100%;
     border: none;
@@ -128,6 +158,22 @@ p {
     /* cursor: not-allowed; */
     font-family: inherit;
 }
+
 input:disabled {
     cursor: not-allowed;
+}
+
+/* Define the keyframes for the gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
